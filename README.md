@@ -1,2 +1,8 @@
-# backend_steam_ipan
-backend steam ipan
+# API Spec
+## Authentication
+All API must use this authentication
+
+Request :
+
+- Header :
+  - X-Api-Key : "your secret api key"
