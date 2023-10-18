@@ -6,6 +6,7 @@ Request :
 
 - Header :
   - Authorization : "Bearer < token >"
+
 ## Login
 
 Request :
@@ -53,7 +54,7 @@ Response :
     "refresh" : "Refresh Token"
 }
 ```
-
+# Pegawai
 ## Get all pegawai
 
 Request :
@@ -199,7 +200,7 @@ Request :
 Request :
 
 - Method : POST
-- Endpoint : **/pegawai/reate-pegawai**
+- Endpoint : **/pegawai/create-pegawai**
 - Header :
   - Content-Type: application/json
   - Accept: application/json
@@ -228,6 +229,58 @@ Request :
 }
 ```
 
+
+
+# Role
+## Update Role
+
+Request :
+
+- Method : PUT
+- Endpoint : **/pegawai/edit-role//{pk}**
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+  - Authorization : "Bearer YOUR_ACCESS_TOKEN",
+
+- Body :
+```login_response
+
+{
+    "name": "admitest",
+    "level": 3   
+}
+
+```
+- Response :
+```login_response
+{
+    "role": {
+        "id": 2,
+        "name": "admitest",
+        "level": 3
+    },
+    "msg": "Update Success"
+}
+```
+
+## Delete Role
+
+Request :
+
+- Method : DELETE
+- Endpoint : **/pegawai/delete-role/{pk}**
+- Header :
+  - Content-Type: application/json
+  - Accept: application/json
+  - Authorization : "Bearer YOUR_ACCESS_TOKEN",
+
+- Response :
+```login_response
+{
+    "msg": "Delete data success"
+}
+```
 
 ## Get All Role
 
@@ -279,12 +332,12 @@ Request :
 }
 ```
 
-## Update Pegawai
+## Insert Role
 
 Request :
 
-- Method : PUT
-- Endpoint : **/pegawai/edit-role//{pk}**
+- Method : POST
+- Endpoint : **/pegawai/create-role**
 - Header :
   - Content-Type: application/json
   - Accept: application/json
@@ -294,38 +347,19 @@ Request :
 ```login_response
 
 {
-    "name": "admitest",
-    "level": 3   
+    "name": "admitest2",
+    "level": 5
 }
 
 ```
 - Response :
 ```login_response
 {
-    "role": {
-        "id": 2,
-        "name": "admitest",
-        "level": 3
-    },
-    "msg": "Update Success"
+    "msg": "Success",
+    "pegawai": {
+        "id": 7,
+        "name": "admitest2",
+        "level": 5
+    }
 }
 ```
-
-## Delete pegawai
-
-Request :
-
-- Method : DELETE
-- Endpoint : **/pegawai/delete-role/{pk}**
-- Header :
-  - Content-Type: application/json
-  - Accept: application/json
-  - Authorization : "Bearer YOUR_ACCESS_TOKEN",
-
-- Response :
-```login_response
-{
-    "msg": "Delete data success"
-}
-```
-
